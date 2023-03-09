@@ -2,11 +2,14 @@ import { Project } from "./Project"
 
 type ProjectCardProps = {
   project: Project
+  onEdit: (project: Project) => void
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = (props: ProjectCardProps) => {
+  const { project, onEdit } = props;
+
   const handleEditClick = (projectBeingEdited: Project) => {
-    console.log(projectBeingEdited);
+    onEdit(projectBeingEdited);
   };
 
   return (
